@@ -65,10 +65,30 @@ public class WordCountApp {
     }
 
     public static void printLogo() {
-        log.info("\n" +
+        final String RED_COLOR = "\u001b["  // Prefix - see [1]
+                + "0"        // Brightness
+                + ";"        // Separator
+                + "31"       // Red foreground
+                + "m"        // Suffix
+        ;
+        final String RESET_COLOR = "\u001b[m ";
+//        for (int i = 0; i < 90; i++) {
+//            log.info("\u001B[0;"+i+"mNice COLOR="+i+RESET_COLOR);
+//        }
+        log.info("\u001B[0;36m" + "\n" +
                 " ____   __   ____  _  _    __ _   __    ___ \n" +
                 "(  __) / _\\ / ___)( \\/ )  (  ( \\ /  \\  / __)\n" +
                 " ) _) /    \\\\___ \\ )  /   /    /(  O )( (__ \n" +
-                "(____)\\_/\\_/(____/(__/    \\_)__) \\__/  \\___)\n");
+                "(____)\\_/\\_/(____/(__/    \\_)__) \\__/  \\___)\n" +
+                RESET_COLOR
+        );
+//        log.info(RED_COLOR +
+//                "\n" +
+//                "   ____                          _  __  ____   _____\n" +
+//                "  / __/ ___ _  ___  __ __       / |/ / / __ \\ / ___/\n" +
+//                " / _/  / _ `/ (_-< / // /      /    / / /_/ // /__  \n" +
+//                "/___/  \\_,_/ /___/ \\_, /      /_/|_/  \\____/ \\___/  \n" +
+//                "                  /___/                             \n"
+//                + RESET_COLOR); // Prefix + Suffix to reset color
     }
 }
